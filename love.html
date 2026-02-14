@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>ขอเป็นแฟนได้ไหม 💖</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #ffd6e8, #ffeef6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: "Comic Sans MS", "Kanit", sans-serif;
+    }
+
+    .card {
+      background: white;
+      padding: 40px;
+      border-radius: 25px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      max-width: 350px;
+      width: 90%;
+      animation: pop 1s ease;
+    }
+
+    @keyframes pop {
+      0% { transform: scale(0.8); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    h1 {
+      color: #ff5c8a;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #555;
+      font-size: 18px;
+    }
+
+    .buttons {
+      margin-top: 25px;
+    }
+
+    button {
+      font-size: 18px;
+      padding: 10px 22px;
+      border-radius: 30px;
+      border: none;
+      cursor: pointer;
+      margin: 5px;
+      transition: 0.3s;
+    }
+
+    .yes {
+      background: #ff5c8a;
+      color: white;
+    }
+
+    .yes:hover {
+      background: #ff2f6d;
+      transform: scale(1.05);
+    }
+
+    .no {
+      background: #ddd;
+      color: #555;
+      position: relative;
+    }
+
+    .heart {
+      font-size: 40px;
+      animation: beat 1s infinite;
+    }
+
+    @keyframes beat {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card" id="card">
+    <div class="heart">💗</div>
+    <h1>ขอเป็นแฟนได้ไหม</h1>
+    <p>อยู่ด้วยกันไปนานๆ ได้หรือเปล่า 🥺</p>
+
+    <div class="buttons">
+      <button class="yes" onclick="yesClick()">ตกลง 💕</button>
+      <button class="no" onmouseover="moveNo()">ไม่อ่ะ 🙈</button>
+    </div>
+  </div>
+
+  <script>
+    function yesClick() {
+      document.getElementById("card").innerHTML = `
+        <div class="heart">💞</div>
+        <h1>เย้!!!</h1>
+        <p>ตั้งแต่วันนี้เราเป็นแฟนกันแล้วนะ 🥰</p>
+        <p>สัญญาว่าจะดูแลอย่างดี 💖</p>
+      `;
+    }
+
+    function moveNo() {
+      const btn = document.querySelector(".no");
+      const x = Math.random() * 200 - 100;
+      const y = Math.random() * 200 - 100;
+      btn.style.transform = `translate(${x}px, ${y}px)`;
+    }
+  </script>
+
+</body>
+</html>
